@@ -17,12 +17,12 @@ from typing import List
 import os
 
 load_dotenv()
-GROQ_API_KEY = os.getenv('grokAPIKeyGenAIClass')
+GROQ_API_KEY = os.getenv('grokAPIKey')
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
-filePath = "/Users/thejas/Desktop/Fall2025/GenAI/Assignment 2 Part 2/CUDA_Affiliate_Agreements/CreditcardscomInc_20070810_S-1_EX-10.33_362297_EX-10.33_Affiliate Agreement.pdf"
-folderPath = "/Users/thejas/Desktop/Fall2025/GenAI/Assignment 2 Part 2/CUDA_Affiliate_Agreements/"
-testAddingNewFilePath = "/Users/thejas/Desktop/Fall2025/GenAI/Assignment 2 Part 2/CUDA_Affiliate_Agreements/LinkPlusCorp_20050802_8-K_EX-10_3240252_EX-10_Affiliate Agreement.pdf"
+filePath = "./CUDA_Affiliate_Agreements/CreditcardscomInc_20070810_S-1_EX-10.33_362297_EX-10.33_Affiliate Agreement.pdf"
+folderPath = "./CUDA_Affiliate_Agreements/"
+testAddingNewFilePath = "./CUDA_Affiliate_Agreements/LinkPlusCorp_20050802_8-K_EX-10_3240252_EX-10_Affiliate Agreement.pdf"
 
 def buildDocumentDB(folderPath):
     docs=[]
