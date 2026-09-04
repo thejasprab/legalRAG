@@ -17,8 +17,11 @@ from typing import List
 import os
 
 load_dotenv()
-GROQ_API_KEY = os.getenv('grokAPIKey')
-os.environ["GROQ_API_KEY"] = GROQ_API_KEY
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+if not GROQ_API_KEY:
+    raise RuntimeError("GROQ_API_KEY is not set")
 
 filePath = "./CUDA_Affiliate_Agreements/CreditcardscomInc_20070810_S-1_EX-10.33_362297_EX-10.33_Affiliate Agreement.pdf"
 folderPath = "./CUDA_Affiliate_Agreements/"
@@ -242,4 +245,6 @@ with gr.Blocks(title="RAG Chatbot") as demo:
              .then(lambda: [], None, history_state)
     
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(
+        ssr_mode=False
+    )
